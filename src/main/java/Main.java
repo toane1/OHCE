@@ -21,9 +21,8 @@ public class Main {
     private static int langue() {
         int lang = 0;
         Scanner sc = new Scanner(System.in);
+        System.out.println("Choisi une langue : \n 1 = francais, \n 2 = anglais");
         do{
-
-            System.out.println("Choisi une langue : \n 1 = francais, \n 2 = anglais");
             String langue = sc.next();
             try
             {
@@ -38,14 +37,18 @@ public class Main {
     }
 
     private static void palindrome(String mot, int langue) {
-        String pal = "";
+        StringBuilder pal = new StringBuilder();
         if (mot.isEmpty()) {
-            System.out.println("Ther is not word; le mot en'est pas complété");
+            if(langue == 1){
+                System.out.println("Le mot n'est pas complété");
+            }else{
+                System.out.println("There is not word.");
+            }
         } else {
             for (int i = 0; i < (mot.length()); ++i) {
-                pal += mot.charAt((mot.length() - 1) - i);
+                pal.append(mot.charAt((mot.length() - 1) - i));
             }
-            if (pal.equals(mot)) {
+            if (pal.toString().equals(mot)) {
                 if(langue == 1){
                     System.out.println("gg");
                 }else{
