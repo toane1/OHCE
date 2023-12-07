@@ -103,7 +103,7 @@
       <updated>1701848301175</updated>
       <workItem from="1701848302209" duration="9469000" />
       <workItem from="1701864392037" duration="9163000" />
-      <workItem from="1701936511462" duration="9962000" />
+      <workItem from="1701936511462" duration="10010000" />
     </task>
     <task id="LOCAL-00001" summary="echauffement">
       <option name="closed" value="true" />
@@ -153,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701949173384</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test palindrome bjr et aurevoir">
+      <option name="closed" value="true" />
+      <created>1701949240167</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701949240167</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
