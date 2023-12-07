@@ -4,7 +4,11 @@ import fr.Antoine.Archer.TestBuilders.VerificationPalindromeBuilder;
 import fr.AntoineArcher.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -76,6 +80,7 @@ public class PalindromeTest {
         String firstLine = lines[0];
         assertEquals(Expressions.BONJOUR, firstLine);
     }
+
     @ParameterizedTest
     @ValueSource(strings = {"test", "radar"})
     public void testBonjourAnglais(String chaine){
@@ -130,5 +135,32 @@ public class PalindromeTest {
         String lastline = lines[lines.length - 1];
         assertEquals(Expressions.BYE, lastline);
     }
+
+    static Stream<Arguments> casTestBonjour(){
+        return Stream.of(
+                Arguments.of("test", new LangueFrancais(), Expressions.BONJOUR),
+                Arguments.of("radar", new LangueFrancais(), Expressions.BONJOUR),
+                Arguments.of("test", new LangueAnglais(), Expressions.HELLO),
+                Arguments.of("radar", new LangueAnglais(), Expressions.HELLO)
+        );
+    }
+    @ParameterizedTest
+    @MethodSource("casTestBonjour")
+    public void testBonjourMultiCas(String chaine, Langue langue, String bjr){
+        // ETANT DONNE une chaîne
+        // ET un utilisateur parlant une <langue>
+        var verification = new VerificationPalindromeBuilder()
+                .ayantPourLangue(langue)
+                .build();
+
+        // QUAND on vérifie si c'est un palindrome
+        String resultat =  verification.verifier(chaine);
+
+        // ALORS toute réponse est précédée de <salutations> dans cette <langue>
+        String[] lines = resultat.split(System.lineSeparator());
+        String firstLine = lines[0];
+        assertEquals(bjr, firstLine);
+    }
+
 
 }
