@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8748dbcc-346e-405e-891e-f2b7505b411e" name="Changes" comment="test Multilingue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fr/Antoine/Archer/PalindromeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/fr/Antoine/Archer/PalindromeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +95,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PalindromeTest.testBonjourMultiCas">
+  <component name="RunManager" selected="JUnit.PalindromeTest.testAuRevoirMultiLangue">
     <configuration name="PalindromeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Echauffement" />
       <extension name="coverage">
@@ -122,6 +122,22 @@
       <option name="PACKAGE_NAME" value="fr.Antoine.Archer" />
       <option name="MAIN_CLASS_NAME" value="fr.Antoine.Archer.PalindromeTest" />
       <option name="METHOD_NAME" value="testAuRevoirFrancais(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PalindromeTest.testAuRevoirMultiLangue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Echauffement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.Antoine.Archer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.Antoine.Archer" />
+      <option name="MAIN_CLASS_NAME" value="fr.Antoine.Archer.PalindromeTest" />
+      <option name="METHOD_NAME" value="testAuRevoirMultiLangue(java.lang.String,fr.AntoineArcher.Langue,java.lang.String)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,29 +175,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PalindromeTest.testPalindrome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Echauffement" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="fr.Antoine.Archer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="fr.Antoine.Archer" />
-      <option name="MAIN_CLASS_NAME" value="fr.Antoine.Archer.PalindromeTest" />
-      <option name="METHOD_NAME" value="testPalindrome(fr.AntoineArcher.Langue,java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PalindromeTest.testAuRevoirMultiLangue" />
         <item itemvalue="JUnit.PalindromeTest.testBonjourMultiCas" />
         <item itemvalue="JUnit.PalindromeTest" />
         <item itemvalue="JUnit.PalindromeTest.testAuRevoirFrancais" />
         <item itemvalue="JUnit.PalindromeTest.testBonjourAnglais" />
-        <item itemvalue="JUnit.PalindromeTest.testPalindrome" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +196,7 @@
       <workItem from="1701848302209" duration="9469000" />
       <workItem from="1701864392037" duration="9163000" />
       <workItem from="1701936511462" duration="15907000" />
-      <workItem from="1701959466640" duration="527000" />
+      <workItem from="1701959466640" duration="728000" />
     </task>
     <task id="LOCAL-00001" summary="echauffement">
       <option name="closed" value="true" />
@@ -278,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701958590863</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="test Multilingue">
+      <option name="closed" value="true" />
+      <created>1701960050397</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701960050397</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

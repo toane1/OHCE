@@ -136,7 +136,7 @@ public class PalindromeTest {
         assertEquals(Expressions.BYE, lastline);
     }
 
-    static Stream<Arguments> casTestBonjour(){
+    static Stream<Arguments> casTestBonjourMultilangue(){
         return Stream.of(
                 Arguments.of("test", new LangueFrancais(), Expressions.BONJOUR),
                 Arguments.of("radar", new LangueFrancais(), Expressions.BONJOUR),
@@ -145,8 +145,8 @@ public class PalindromeTest {
         );
     }
     @ParameterizedTest
-    @MethodSource("casTestBonjour")
-    public void testBonjourMultiCas(String chaine, Langue langue, String bjr){
+    @MethodSource("casTestBonjourMultilangue")
+    public void testBonjourMultiLangue(String chaine, Langue langue, String bjr){
         // ETANT DONNE une chaîne
         // ET un utilisateur parlant une <langue>
         var verification = new VerificationPalindromeBuilder()
@@ -160,6 +160,32 @@ public class PalindromeTest {
         String[] lines = resultat.split(System.lineSeparator());
         String firstLine = lines[0];
         assertEquals(bjr, firstLine);
+    }
+
+    static Stream<Arguments> casTestAuRevoirMultilangue(){
+        return Stream.of(
+                Arguments.of("test", new LangueFrancais(), Expressions.AUREVOIR),
+                Arguments.of("radar", new LangueFrancais(), Expressions.AUREVOIR),
+                Arguments.of("test", new LangueAnglais(), Expressions.BYE),
+                Arguments.of("radar", new LangueAnglais(), Expressions.BYE)
+        );
+    }
+    @ParameterizedTest
+    @MethodSource("casTestAuRevoirMultilangue")
+    public void testAuRevoirMultiLangue(String chaine, Langue langue, String bjr){
+        // ETANT DONNE une chaîne
+        // ET un utilisateur parlant une <langue>
+        var verification = new VerificationPalindromeBuilder()
+                .ayantPourLangue(langue)
+                .build();
+
+        // QUAND on vérifie si c'est un palindrome
+        String resultat =  verification.verifier(chaine);
+
+        // ALORS toute réponse est précédée de <salutations> dans cette <langue>
+        String[] lines = resultat.split(System.lineSeparator());
+        String lastline = lines[lines.length - 1];
+        assertEquals(bjr, lastline);
     }
 
 
