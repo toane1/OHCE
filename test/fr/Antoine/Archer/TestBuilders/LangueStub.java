@@ -5,17 +5,17 @@ public class LangueStub implements Langue {
 
 
     @Override
-    public String Feliciter() {
+    public String feliciter() {
         return "";
     }
 
     @Override
-    public String Bonjour() {
+    public String bonjour() {
         return "";
     }
 
     @Override
-    public String AuRevoir() {
+    public String auRevoir() {
         return "";
     }
 }

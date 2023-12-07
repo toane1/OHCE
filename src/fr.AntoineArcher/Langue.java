@@ -1,7 +1,7 @@
 package fr.AntoineArcher;
 
 public interface Langue {
-    String Feliciter();
-    String Bonjour();
-    String AuRevoir();
+    String feliciter();
+    String bonjour();
+    String auRevoir();
 }

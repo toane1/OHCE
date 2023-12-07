@@ -2,17 +2,17 @@ package fr.AntoineArcher;
 
 public class LangueFrancais implements Langue {
     @Override
-    public String Feliciter() {
+    public String feliciter() {
         return Expressions.BIENDIT;
     }
 
     @Override
-    public String Bonjour() {
+    public String bonjour() {
         return Expressions.BONJOUR;
     }
 
     @Override
-    public String AuRevoir() {
+    public String auRevoir() {
         return Expressions.AUREVOIR;
     }
 }

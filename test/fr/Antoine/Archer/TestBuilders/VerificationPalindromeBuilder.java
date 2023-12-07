@@ -1,20 +1,20 @@
 package fr.Antoine.Archer.TestBuilders;
 
 import fr.AntoineArcher.Langue;
-import fr.AntoineArcher.VerificationPalindrome;
+import fr.AntoineArcher.verificationPalindrome;
 
 public class VerificationPalindromeBuilder {
     private Langue langue = new LangueStub();
 
-    public static VerificationPalindrome Default() {
-        return new VerificationPalindromeBuilder().Build();
+    public static verificationPalindrome parDefault() {
+        return new VerificationPalindromeBuilder().build();
     }
 
-    public VerificationPalindrome Build() {
-        return new VerificationPalindrome(this.langue);
+    public verificationPalindrome build() {
+        return new verificationPalindrome(this.langue);
     }
 
-    public VerificationPalindromeBuilder AyantPourLangue(Langue langue){
+    public VerificationPalindromeBuilder ayantPourLangue(Langue langue){
         this.langue = langue;
         return this;
     }

@@ -15,7 +15,7 @@ public class PalindromeTest {
     public void testMiroir(String chaine) {
         // ETANT DONNE une chaîne n'étant pas un palindrome
         // QUAND on vérifie si c'est un palindrome
-        String resultat = VerificationPalindromeBuilder.Default().Verifier(chaine);
+        String resultat = VerificationPalindromeBuilder.parDefault().verifier(chaine);
 
         // ALORS on obtient son miroir
         String inversion = new StringBuilder(chaine)
@@ -30,11 +30,11 @@ public class PalindromeTest {
         String palindrome = "radar";
         // et un utilisateur en langue française
         Langue langue = new LangueFrancais();
-        VerificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
-                .AyantPourLangue(langue)
-                .Build();
+        verificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
+                .ayantPourLangue(langue)
+                .build();
         // QUAND on vérifie si c'est un palindrome
-        String resultat = verificationPalindrome.Verifier(palindrome);
+        String resultat = verificationPalindrome.verifier(palindrome);
 
         // ALORS la chaîne est répétée, suivie de "Bien dit !"
         String attendu = palindrome + System.lineSeparator() + Expressions.BIENDIT;
@@ -46,11 +46,11 @@ public class PalindromeTest {
         String palindrome = "radar";
         // et un utilisateur en langue anglaise
         Langue langue = new LangueAnglais();
-        VerificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
-                .AyantPourLangue(langue)
-                .Build();
+        verificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
+                .ayantPourLangue(langue)
+                .build();
         // QUAND on vérifie si c'est un palindrome
-        String resultat = verificationPalindrome.Verifier(palindrome);
+        String resultat = verificationPalindrome.verifier(palindrome);
 
         // ALORS la chaîne est répétée, suivie de "Well Done !"
         String attendu = palindrome + System.lineSeparator() + Expressions.WELLDONE;
@@ -64,12 +64,12 @@ public class PalindromeTest {
         //
         // et un utilisateur en langue française
                 Langue langue = new LangueFrancais();
-                VerificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
-                        .AyantPourLangue(langue)
-                        .Build();
+                verificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
+                        .ayantPourLangue(langue)
+                        .build();
         // QUAND on vérifie si c'est un palindrome
         // QUAND on vérifie si c'est un palindrome
-        String resultat = verificationPalindrome.Verifier(chaine);
+        String resultat = verificationPalindrome.verifier(chaine);
 
         // ALORS toute réponse est précédée de "Bonjour"
         String[] lines = resultat.split(System.lineSeparator());
@@ -83,12 +83,12 @@ public class PalindromeTest {
         //
         // et un utilisateur en langue française
         Langue langue = new LangueAnglais();
-        VerificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
-                .AyantPourLangue(langue)
-                .Build();
+        verificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
+                .ayantPourLangue(langue)
+                .build();
         // QUAND on vérifie si c'est un palindrome
         // QUAND on vérifie si c'est un palindrome
-        String resultat = verificationPalindrome.Verifier(chaine);
+        String resultat = verificationPalindrome.verifier(chaine);
 
         // ALORS toute réponse est précédée de "Bonjour"
         String[] lines = resultat.split(System.lineSeparator());
@@ -102,11 +102,11 @@ public class PalindromeTest {
         // ETANT DONNE une chaîne
         // et un utilisateur en langue française
         Langue langue = new LangueFrancais();
-        VerificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
-                .AyantPourLangue(langue)
-                .Build();
+        verificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
+                .ayantPourLangue(langue)
+                .build();
         // QUAND on vérifie si c'est un palindrome
-        String resultat = verificationPalindrome.Verifier(chaine);
+        String resultat = verificationPalindrome.verifier(chaine);
 
         // ALORS toute réponse est suivie de "Au Revoir"
         String[] lines = resultat.split(System.lineSeparator());
@@ -120,11 +120,11 @@ public class PalindromeTest {
         // ETANT DONNE une chaîne
         // et un utilisateur en langue française
         Langue langue = new LangueAnglais();
-        VerificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
-                .AyantPourLangue(langue)
-                .Build();
+        verificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
+                .ayantPourLangue(langue)
+                .build();
         // QUAND on vérifie si c'est un palindrome
-        String resultat = verificationPalindrome.Verifier(chaine);
+        String resultat = verificationPalindrome.verifier(chaine);
         // ALORS toute réponse est suivie de "Au Revoir"
         String[] lines = resultat.split(System.lineSeparator());
         String lastline = lines[lines.length - 1];
