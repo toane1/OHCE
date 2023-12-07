@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8748dbcc-346e-405e-891e-f2b7505b411e" name="Changes" comment="test palindrome bjr et aurevoir">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fr/Antoine/Archer/PalindromeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/fr/Antoine/Archer/PalindromeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +103,7 @@
       <updated>1701848301175</updated>
       <workItem from="1701848302209" duration="9469000" />
       <workItem from="1701864392037" duration="9163000" />
-      <workItem from="1701936511462" duration="9892000" />
+      <workItem from="1701936511462" duration="9962000" />
     </task>
     <task id="LOCAL-00001" summary="echauffement">
       <option name="closed" value="true" />
@@ -146,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701948992491</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="test palindrome bjr et aurevoir">
+      <option name="closed" value="true" />
+      <created>1701949173384</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701949173384</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
