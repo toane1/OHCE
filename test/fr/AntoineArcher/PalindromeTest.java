@@ -1,7 +1,6 @@
-package fr.Antoine.Archer;
+package fr.AntoineArcher;
 
-import fr.Antoine.Archer.TestBuilders.VerificationPalindromeBuilder;
-import fr.AntoineArcher.*;
+import fr.AntoineArcher.TestBuilders.VerificationPalindromeBuilder;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -188,5 +187,26 @@ public class PalindromeTest {
         assertEquals(bjr, lastline);
     }
 
+    static Stream<Arguments> casPalindromeMultilangue(){
+        return Stream.of(
+                Arguments.of("radar", new LangueFrancais(), Expressions.BIENDIT),
+                Arguments.of("radar", new LangueAnglais(), Expressions.WELLDONE)
+        );
+    }
+    @ParameterizedTest
+    @MethodSource("casPalindromeMultilangue")
+    public void testPalindromeMultiLangue(String palindrome, Langue langue, String gg){
+        // ETANT DONNE une chaîne
+        // ET un utilisateur parlant une <langue>
+        var verification = new VerificationPalindromeBuilder()
+                .ayantPourLangue(langue)
+                .build();
 
+        // QUAND on vérifie si c'est un palindrome
+        String resultat =  verification.verifier(palindrome);
+
+        // ALORS toute réponse est précédée de <salutations> dans cette <langue>
+        String attendu = palindrome + System.lineSeparator() + gg;
+        assertTrue(resultat.contains(attendu));
+    }
 }

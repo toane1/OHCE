@@ -1,4 +1,4 @@
-package fr.Antoine.Archer.TestBuilders;
+package fr.AntoineArcher.TestBuilders;
 
 import fr.AntoineArcher.Langue;
 import fr.AntoineArcher.verificationPalindrome;
