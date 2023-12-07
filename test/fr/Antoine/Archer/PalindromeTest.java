@@ -10,6 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PalindromeTest {
+    @ParameterizedTest
+    @ValueSource(strings = {"test", "radar"})
     public void testMiroir(String chaine) {
         // ETANT DONNE une chaîne n'étant pas un palindrome
         // QUAND on vérifie si c'est un palindrome
