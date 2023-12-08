@@ -1,12 +1,18 @@
 package fr.AntoineArcher.TestBuilders;
+
 import fr.AntoineArcher.Domain.Langue;
 
-public class LangueStub implements Langue {
-
+public class LangueSpy implements Langue {
+    private boolean feliciterAEteInvoque;
 
     @Override
     public String feliciter() {
+        this.feliciterAEteInvoque = true;
         return "";
+    }
+
+    public boolean feliciterAEteInvoque() {
+        return this.feliciterAEteInvoque;
     }
 
     @Override

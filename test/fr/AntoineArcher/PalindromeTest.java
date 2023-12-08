@@ -1,6 +1,12 @@
 package fr.AntoineArcher;
 
+import fr.AntoineArcher.Domain.Constantes;
+import fr.AntoineArcher.Domain.Langue;
+import fr.AntoineArcher.Domain.LangueAnglais;
+import fr.AntoineArcher.Domain.LangueFrancais;
+import fr.AntoineArcher.TestBuilders.LangueSpy;
 import fr.AntoineArcher.TestBuilders.VerificationPalindromeBuilder;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -9,11 +15,11 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PalindromeTest {
     @ParameterizedTest
+    @DisplayName("On retourne en miroir une chaîne de caractère transmise")
     @ValueSource(strings = {"test", "radar"})
     public void testMiroir(String chaine) {
         // ETANT DONNE une chaîne n'étant pas un palindrome
@@ -28,119 +34,50 @@ public class PalindromeTest {
         assertTrue(resultat.contains(inversion));
     }
     @Test
-    public void testPalindromeFrancais(){
-        // ETANT DONNE un palindrome
-        String palindrome = "radar";
-        // et un utilisateur en langue française
-        Langue langue = new LangueFrancais();
-        verificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
+    @DisplayName("Si pas un palindrome, on ne félicite pas")
+    public void testSansPalindromePasDeFelicitations(){
+        // ETANT DONNE un non-palindrome
+        String chaine = "test";
+        var langueSpy = new LangueSpy();
+        var verificateur = new VerificationPalindromeBuilder()
+                .ayantPourLangue(langueSpy)
+                .build();
+
+        // QUAND on vérifie si c'est un palindrome
+        verificateur.verifier(chaine);
+
+        // ALORS le résultat ne comporte pas de félicitations
+        assertFalse(langueSpy.feliciterAEteInvoque());
+    }
+    static Stream<Arguments> casPalindromeMultilangue(){
+        return Stream.of(
+                Arguments.of("radar", new LangueFrancais(), Constantes.BIENDIT),
+                Arguments.of("radar", new LangueAnglais(), Constantes.WELLDONE)
+        );
+    }
+    @ParameterizedTest
+    @DisplayName("On félicite l'utilisateur quand il entre un palindrome")
+    @MethodSource("casPalindromeMultilangue")
+    public void testPalindromeMultiLangue(String palindrome, Langue langue, String gg){
+        // ETANT DONNE une chaîne
+        // ET un utilisateur parlant une <langue>
+        var verification = new VerificationPalindromeBuilder()
                 .ayantPourLangue(langue)
                 .build();
-        // QUAND on vérifie si c'est un palindrome
-        String resultat = verificationPalindrome.verifier(palindrome);
 
-        // ALORS la chaîne est répétée, suivie de "Bien dit !"
-        String attendu = palindrome + System.lineSeparator() + Expressions.BIENDIT;
+        // QUAND on vérifie si c'est un palindrome
+        String resultat =  verification.verifier(palindrome);
+
+        // ALORS toute réponse est précédée de <salutations> dans cette <langue>
+        String attendu = palindrome + System.lineSeparator() + gg;
         assertTrue(resultat.contains(attendu));
     }
-    @Test
-    public void testPalindromeAnglais(){
-        // ETANT DONNE un palindrome
-        String palindrome = "radar";
-        // et un utilisateur en langue anglaise
-        Langue langue = new LangueAnglais();
-        verificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
-                .ayantPourLangue(langue)
-                .build();
-        // QUAND on vérifie si c'est un palindrome
-        String resultat = verificationPalindrome.verifier(palindrome);
-
-        // ALORS la chaîne est répétée, suivie de "Well Done !"
-        String attendu = palindrome + System.lineSeparator() + Expressions.WELLDONE;
-        assertTrue(resultat.contains(attendu));
-    }
-
-    @ParameterizedTest
-    @ValueSource(strings = {"test", "radar"})
-    public void testBonjourFrancais(String chaine){
-        // ETANT DONNE une chaîne
-        //
-        // et un utilisateur en langue française
-                Langue langue = new LangueFrancais();
-                verificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
-                        .ayantPourLangue(langue)
-                        .build();
-        // QUAND on vérifie si c'est un palindrome
-        // QUAND on vérifie si c'est un palindrome
-        String resultat = verificationPalindrome.verifier(chaine);
-
-        // ALORS toute réponse est précédée de "Bonjour"
-        String[] lines = resultat.split(System.lineSeparator());
-        String firstLine = lines[0];
-        assertEquals(Expressions.BONJOUR, firstLine);
-    }
-
-    @ParameterizedTest
-    @ValueSource(strings = {"test", "radar"})
-    public void testBonjourAnglais(String chaine){
-        // ETANT DONNE une chaîne
-        //
-        // et un utilisateur en langue française
-        Langue langue = new LangueAnglais();
-        verificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
-                .ayantPourLangue(langue)
-                .build();
-        // QUAND on vérifie si c'est un palindrome
-        // QUAND on vérifie si c'est un palindrome
-        String resultat = verificationPalindrome.verifier(chaine);
-
-        // ALORS toute réponse est précédée de "Bonjour"
-        String[] lines = resultat.split(System.lineSeparator());
-        String firstLine = lines[0];
-        assertEquals(Expressions.HELLO, firstLine);
-    }
-
-    @ParameterizedTest
-    @ValueSource(strings = {"test", "radar"})
-    public void testAuRevoirFrancais(String chaine){
-        // ETANT DONNE une chaîne
-        // et un utilisateur en langue française
-        Langue langue = new LangueFrancais();
-        verificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
-                .ayantPourLangue(langue)
-                .build();
-        // QUAND on vérifie si c'est un palindrome
-        String resultat = verificationPalindrome.verifier(chaine);
-
-        // ALORS toute réponse est suivie de "Au Revoir"
-        String[] lines = resultat.split(System.lineSeparator());
-        String lastLine = lines[lines.length - 1];
-        assertEquals(Expressions.AUREVOIR, lastLine);
-    }
-
-    @ParameterizedTest
-    @ValueSource(strings =  {"test", "radar"})
-    public void testAuRevoirAnglais(String chaine){
-        // ETANT DONNE une chaîne
-        // et un utilisateur en langue française
-        Langue langue = new LangueAnglais();
-        verificationPalindrome verificationPalindrome = new VerificationPalindromeBuilder()
-                .ayantPourLangue(langue)
-                .build();
-        // QUAND on vérifie si c'est un palindrome
-        String resultat = verificationPalindrome.verifier(chaine);
-        // ALORS toute réponse est suivie de "Au Revoir"
-        String[] lines = resultat.split(System.lineSeparator());
-        String lastline = lines[lines.length - 1];
-        assertEquals(Expressions.BYE, lastline);
-    }
-
     static Stream<Arguments> casTestBonjourMultilangue(){
         return Stream.of(
-                Arguments.of("test", new LangueFrancais(), Expressions.BONJOUR),
-                Arguments.of("radar", new LangueFrancais(), Expressions.BONJOUR),
-                Arguments.of("test", new LangueAnglais(), Expressions.HELLO),
-                Arguments.of("radar", new LangueAnglais(), Expressions.HELLO)
+                Arguments.of("test", new LangueFrancais(), Constantes.BONJOUR_FR),
+                Arguments.of("radar", new LangueFrancais(), Constantes.BONJOUR_FR),
+                Arguments.of("test", new LangueAnglais(), Constantes.BONJOUR_EN),
+                Arguments.of("radar", new LangueAnglais(), Constantes.BONJOUR_EN)
         );
     }
     @ParameterizedTest
@@ -163,10 +100,10 @@ public class PalindromeTest {
 
     static Stream<Arguments> casTestAuRevoirMultilangue(){
         return Stream.of(
-                Arguments.of("test", new LangueFrancais(), Expressions.AUREVOIR),
-                Arguments.of("radar", new LangueFrancais(), Expressions.AUREVOIR),
-                Arguments.of("test", new LangueAnglais(), Expressions.BYE),
-                Arguments.of("radar", new LangueAnglais(), Expressions.BYE)
+                Arguments.of("test", new LangueFrancais(), Constantes.AUREVOIR_FR),
+                Arguments.of("radar", new LangueFrancais(), Constantes.AUREVOIR_FR),
+                Arguments.of("test", new LangueAnglais(), Constantes.AUREVOIR_EN),
+                Arguments.of("radar", new LangueAnglais(), Constantes.AUREVOIR_EN)
         );
     }
     @ParameterizedTest
@@ -185,28 +122,5 @@ public class PalindromeTest {
         String[] lines = resultat.split(System.lineSeparator());
         String lastline = lines[lines.length - 1];
         assertEquals(bjr, lastline);
-    }
-
-    static Stream<Arguments> casPalindromeMultilangue(){
-        return Stream.of(
-                Arguments.of("radar", new LangueFrancais(), Expressions.BIENDIT),
-                Arguments.of("radar", new LangueAnglais(), Expressions.WELLDONE)
-        );
-    }
-    @ParameterizedTest
-    @MethodSource("casPalindromeMultilangue")
-    public void testPalindromeMultiLangue(String palindrome, Langue langue, String gg){
-        // ETANT DONNE une chaîne
-        // ET un utilisateur parlant une <langue>
-        var verification = new VerificationPalindromeBuilder()
-                .ayantPourLangue(langue)
-                .build();
-
-        // QUAND on vérifie si c'est un palindrome
-        String resultat =  verification.verifier(palindrome);
-
-        // ALORS toute réponse est précédée de <salutations> dans cette <langue>
-        String attendu = palindrome + System.lineSeparator() + gg;
-        assertTrue(resultat.contains(attendu));
     }
 }

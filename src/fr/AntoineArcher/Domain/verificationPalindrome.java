@@ -1,16 +1,18 @@
-package fr.AntoineArcher;
+package fr.AntoineArcher.Domain;
 
 public class verificationPalindrome {
     private final Langue langue;
-    public verificationPalindrome(Langue langue){
+    private final int momentDeLaJournee;
+    public verificationPalindrome(Langue langue, int momentDeLaJournee){
         this.langue = langue;
+        this.momentDeLaJournee = momentDeLaJournee;
     }
     public String verifier(String chaine) {
         String miroir =  new StringBuilder(chaine)
                 .reverse()
                 .toString();
         StringBuilder resultBuilder = new StringBuilder();
-        resultBuilder.append(this.langue.bonjour());
+        resultBuilder.append(this.langue.bonjour(momentDeLaJournee));
         resultBuilder.append(System.lineSeparator());
         resultBuilder.append(miroir);
         resultBuilder.append(System.lineSeparator());
@@ -20,7 +22,7 @@ public class verificationPalindrome {
             resultBuilder.append(System.lineSeparator());
         }
 
-        resultBuilder.append(langue.auRevoir());
+        resultBuilder.append(langue.auRevoir(momentDeLaJournee));
         return resultBuilder.toString();
     }
 }
