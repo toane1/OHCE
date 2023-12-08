@@ -5,14 +5,14 @@ import fr.AntoineArcher.Domain.verificationPalindrome;
 
 public class VerificationPalindromeBuilder {
     private Langue langue = new LangueStub();
-    private final int momentDeLaJournee = 0;
 
     public static verificationPalindrome parDefault() {
         return new VerificationPalindromeBuilder().build();
     }
 
     public verificationPalindrome build() {
-        return new verificationPalindrome(this.langue, this.momentDeLaJournee);
+        int momentDeLaJournee = 0;
+        return new verificationPalindrome(this.langue, momentDeLaJournee);
     }
 
     public VerificationPalindromeBuilder ayantPourLangue(Langue langue){
