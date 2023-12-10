@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8748dbcc-346e-405e-891e-f2b7505b411e" name="Changes" comment="test Multilingue aurevoir">
-      <change afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/Domain/Constantes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/Domain/MomentDeLaJournee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/console/DetectionMomentDeLaJournee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/console/LangueSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/console/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fr/AntoineArcher/TestBuilders/LangueSpy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fr/AntoineArcher/TestBuilders/MomentDeLaJourneeStub.java" afterDir="false" />
+    <list default="true" id="8748dbcc-346e-405e-891e-f2b7505b411e" name="Changes" comment="debut implémentation heures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr.AntoineArcher/Expressions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr.AntoineArcher/Langue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/Domain/Langue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr.AntoineArcher/LangueAnglais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/Domain/LangueAnglais.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr.AntoineArcher/LangueFrancais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/Domain/LangueFrancais.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr.AntoineArcher/verificationPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/Domain/verificationPalindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fr/AntoineArcher/PalindromeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/fr/AntoineArcher/PalindromeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fr/AntoineArcher/TestBuilders/LangueStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/fr/AntoineArcher/TestBuilders/LangueStub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fr/AntoineArcher/TestBuilders/VerificationPalindromeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/fr/AntoineArcher/TestBuilders/VerificationPalindromeBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +293,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701960346760</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="debut implémentation heures">
+      <option name="closed" value="true" />
+      <created>1702047854562</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702047854562</updated>
+    </task>
+    <task id="LOCAL-00014" summary="debut implémentation heures">
+      <option name="closed" value="true" />
+      <created>1702047920452</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702047920452</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,6 +334,7 @@
     <MESSAGE value="refacto noms fonctions" />
     <MESSAGE value="test Multilingue" />
     <MESSAGE value="test Multilingue aurevoir" />
-    <option name="LAST_COMMIT_MESSAGE" value="test Multilingue aurevoir" />
+    <MESSAGE value="debut implémentation heures" />
+    <option name="LAST_COMMIT_MESSAGE" value="debut implémentation heures" />
   </component>
 </project>
