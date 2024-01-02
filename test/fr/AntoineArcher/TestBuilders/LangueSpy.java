@@ -1,6 +1,6 @@
 package fr.AntoineArcher.TestBuilders;
 
-import fr.AntoineArcher.Domain.Langue;
+import fr.AntoineArcher.domaine.Langue;
 
 public class LangueSpy implements Langue {
     private boolean feliciterAEteInvoque;

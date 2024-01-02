@@ -1,5 +1,5 @@
 package fr.AntoineArcher.TestBuilders;
-import fr.AntoineArcher.Domain.Langue;
+import fr.AntoineArcher.domaine.Langue;
 
 public class LangueStub implements Langue {
 
@@ -11,12 +11,12 @@ public class LangueStub implements Langue {
 
     @Override
     public String bonjour(int momentDeLaJournee) {
-        return "";
+        return " ";
     }
 
     @Override
     public String auRevoir(int momentDeLaJournee) {
-        return "";
+        return " ";
     }
 
     @Override

@@ -1,4 +1,4 @@
-package fr.AntoineArcher.Domain;
+package fr.AntoineArcher.domaine;
 
 public class MomentDeLaJournee {
     public static int INCONNU= 0;

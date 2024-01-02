@@ -1,4 +1,4 @@
-package fr.AntoineArcher.Domain;
+package fr.AntoineArcher.domaine;
 
 public interface Langue {
     String feliciter();

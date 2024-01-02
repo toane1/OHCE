@@ -1,9 +1,6 @@
 package fr.AntoineArcher;
 
-import fr.AntoineArcher.Domain.Constantes;
-import fr.AntoineArcher.Domain.Langue;
-import fr.AntoineArcher.Domain.LangueAnglais;
-import fr.AntoineArcher.Domain.LangueFrancais;
+import fr.AntoineArcher.domaine.*;
 import fr.AntoineArcher.TestBuilders.LangueSpy;
 import fr.AntoineArcher.TestBuilders.VerificationPalindromeBuilder;
 import org.junit.jupiter.api.DisplayName;
@@ -74,53 +71,88 @@ public class PalindromeTest {
     }
     static Stream<Arguments> casTestBonjourMultilangue(){
         return Stream.of(
-                Arguments.of("test", new LangueFrancais(), Constantes.BONJOUR_FR),
-                Arguments.of("radar", new LangueFrancais(), Constantes.BONJOUR_FR),
-                Arguments.of("test", new LangueAnglais(), Constantes.BONJOUR_EN),
-                Arguments.of("radar", new LangueAnglais(), Constantes.BONJOUR_EN)
+                Arguments.of("test", new LangueFrancais(), MomentDeLaJournee.INCONNU, Constantes.BONJOUR_FR),
+                Arguments.of("test", new LangueFrancais(), MomentDeLaJournee.MATIN, Constantes.BONJOUR_FR),
+                Arguments.of("test", new LangueFrancais(), MomentDeLaJournee.APRESMIDI, Constantes.BONJOUR_FR),
+                Arguments.of("test", new LangueFrancais(), MomentDeLaJournee.SOIR, Constantes.BONJOUR_FR),
+                Arguments.of("test", new LangueFrancais(), MomentDeLaJournee.NUIT, Constantes.BONJOUR_FR),
+                Arguments.of("radar", new LangueFrancais(), MomentDeLaJournee.INCONNU, Constantes.BONJOUR_FR),
+                Arguments.of("radar", new LangueFrancais(), MomentDeLaJournee.MATIN, Constantes.BONJOUR_FR),
+                Arguments.of("radar", new LangueFrancais(), MomentDeLaJournee.APRESMIDI, Constantes.BONJOUR_FR),
+                Arguments.of("radar", new LangueFrancais(), MomentDeLaJournee.SOIR, Constantes.BONJOUR_FR),
+                Arguments.of("radar", new LangueFrancais(), MomentDeLaJournee.NUIT, Constantes.BONJOUR_FR),
+                Arguments.of("test", new LangueAnglais(), MomentDeLaJournee.INCONNU, Constantes.BONJOUR_EN),
+                Arguments.of("test", new LangueAnglais(), MomentDeLaJournee.MATIN, Constantes.BONJOUR_EN),
+                Arguments.of("test", new LangueAnglais(), MomentDeLaJournee.APRESMIDI, Constantes.BONJOUR_EN),
+                Arguments.of("test", new LangueAnglais(), MomentDeLaJournee.SOIR, Constantes.BONJOUR_EN),
+                Arguments.of("test", new LangueAnglais(), MomentDeLaJournee.NUIT, Constantes.BONJOUR_EN),
+                Arguments.of("radar", new LangueAnglais(), MomentDeLaJournee.INCONNU, Constantes.BONJOUR_EN),
+                Arguments.of("radar", new LangueAnglais(), MomentDeLaJournee.MATIN, Constantes.BONJOUR_EN),
+                Arguments.of("radar", new LangueAnglais(), MomentDeLaJournee.APRESMIDI, Constantes.BONJOUR_EN),
+                Arguments.of("radar", new LangueAnglais(), MomentDeLaJournee.SOIR, Constantes.BONJOUR_EN),
+                Arguments.of("radar", new LangueAnglais(), MomentDeLaJournee.NUIT, Constantes.BONJOUR_EN)
         );
     }
     @ParameterizedTest
     @MethodSource("casTestBonjourMultilangue")
-    public void testBonjourMultiLangue(String chaine, Langue langue, String bjr){
+    public void testBonjourMultiLangue(String chaine, Langue langue, int momentDeLaJournee, String[] bjr){
         // ETANT DONNE une chaîne
         // ET un utilisateur parlant une <langue>
-        var verification = new VerificationPalindromeBuilder()
+        //ET un <moment de la journée>
+        VerificationPalindrome verification = new VerificationPalindromeBuilder()
                 .ayantPourLangue(langue)
+                .ayantPourMomentDeLaJournee(momentDeLaJournee)
                 .build();
-
         // QUAND on vérifie si c'est un palindrome
         String resultat =  verification.verifier(chaine);
 
-        // ALORS toute réponse est précédée de <salutations> dans cette <langue>
+        // ALORS toute réponse est précédée d'un <bjr> dans cette <langue> et adapté au <momentDeLaJournee>
         String[] lines = resultat.split(System.lineSeparator());
         String firstLine = lines[0];
-        assertEquals(bjr, firstLine);
+        assertEquals(bjr[momentDeLaJournee], firstLine);
     }
 
     static Stream<Arguments> casTestAuRevoirMultilangue(){
         return Stream.of(
-                Arguments.of("test", new LangueFrancais(), Constantes.AUREVOIR_FR),
-                Arguments.of("radar", new LangueFrancais(), Constantes.AUREVOIR_FR),
-                Arguments.of("test", new LangueAnglais(), Constantes.AUREVOIR_EN),
-                Arguments.of("radar", new LangueAnglais(), Constantes.AUREVOIR_EN)
+                Arguments.of("test", new LangueFrancais(), MomentDeLaJournee.INCONNU, Constantes.AUREVOIR_FR),
+                Arguments.of("test", new LangueFrancais(), MomentDeLaJournee.MATIN, Constantes.AUREVOIR_FR),
+                Arguments.of("test", new LangueFrancais(), MomentDeLaJournee.APRESMIDI, Constantes.AUREVOIR_FR),
+                Arguments.of("test", new LangueFrancais(), MomentDeLaJournee.SOIR, Constantes.AUREVOIR_FR),
+                Arguments.of("test", new LangueFrancais(), MomentDeLaJournee.NUIT, Constantes.AUREVOIR_FR),
+                Arguments.of("radar", new LangueFrancais(), MomentDeLaJournee.INCONNU, Constantes.AUREVOIR_FR),
+                Arguments.of("radar", new LangueFrancais(), MomentDeLaJournee.MATIN, Constantes.AUREVOIR_FR),
+                Arguments.of("radar", new LangueFrancais(), MomentDeLaJournee.APRESMIDI, Constantes.AUREVOIR_FR),
+                Arguments.of("radar", new LangueFrancais(), MomentDeLaJournee.SOIR, Constantes.AUREVOIR_FR),
+                Arguments.of("radar", new LangueFrancais(), MomentDeLaJournee.NUIT, Constantes.AUREVOIR_FR),
+                Arguments.of("test", new LangueAnglais(), MomentDeLaJournee.INCONNU, Constantes.AUREVOIR_EN),
+                Arguments.of("test", new LangueAnglais(), MomentDeLaJournee.MATIN, Constantes.AUREVOIR_EN),
+                Arguments.of("test", new LangueAnglais(), MomentDeLaJournee.APRESMIDI, Constantes.AUREVOIR_EN),
+                Arguments.of("test", new LangueAnglais(), MomentDeLaJournee.SOIR, Constantes.AUREVOIR_EN),
+                Arguments.of("test", new LangueAnglais(), MomentDeLaJournee.NUIT, Constantes.AUREVOIR_EN),
+                Arguments.of("radar", new LangueAnglais(), MomentDeLaJournee.INCONNU, Constantes.AUREVOIR_EN),
+                Arguments.of("radar", new LangueAnglais(), MomentDeLaJournee.MATIN, Constantes.AUREVOIR_EN),
+                Arguments.of("radar", new LangueAnglais(), MomentDeLaJournee.APRESMIDI, Constantes.AUREVOIR_EN),
+                Arguments.of("radar", new LangueAnglais(), MomentDeLaJournee.SOIR, Constantes.AUREVOIR_EN),
+                Arguments.of("radar", new LangueAnglais(), MomentDeLaJournee.NUIT, Constantes.AUREVOIR_EN)
         );
     }
     @ParameterizedTest
     @MethodSource("casTestAuRevoirMultilangue")
-    public void testAuRevoirMultiLangue(String chaine, Langue langue, String bjr){
+    public void testAuRevoirMultiLangue(String chaine, Langue langue,int momentDeLaJournee, String[] bsr){
         // ETANT DONNE une chaîne
         // ET un utilisateur parlant une <langue>
+        // ET un <moment de la journee>
         var verification = new VerificationPalindromeBuilder()
                 .ayantPourLangue(langue)
+                .ayantPourMomentDeLaJournee(momentDeLaJournee)
                 .build();
 
         // QUAND on vérifie si c'est un palindrome
         String resultat =  verification.verifier(chaine);
 
-        // ALORS toute réponse est précédée de <salutations> dans cette <langue>
+        // ALORS toute réponse d'achève par un <bsr> dans cette <langue> et adapté au <momentDeLaJournee>
         String[] lines = resultat.split(System.lineSeparator());
         String lastline = lines[lines.length - 1];
-        assertEquals(bjr, lastline);
+        assertEquals(bsr[momentDeLaJournee], lastline);
     }
 }

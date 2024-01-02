@@ -1,9 +1,9 @@
-package fr.AntoineArcher.Domain;
+package fr.AntoineArcher.domaine;
 
-public class verificationPalindrome {
+public class VerificationPalindrome {
     private final Langue langue;
     private final int momentDeLaJournee;
-    public verificationPalindrome(Langue langue, int momentDeLaJournee){
+    public VerificationPalindrome(Langue langue, int momentDeLaJournee){
         this.langue = langue;
         this.momentDeLaJournee = momentDeLaJournee;
     }
@@ -23,6 +23,7 @@ public class verificationPalindrome {
         }
 
         resultBuilder.append(langue.auRevoir(momentDeLaJournee));
+
         return resultBuilder.toString();
     }
 }

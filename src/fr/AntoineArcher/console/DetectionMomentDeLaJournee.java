@@ -1,6 +1,6 @@
 package fr.AntoineArcher.console;
 
-import fr.AntoineArcher.Domain.MomentDeLaJournee;
+import fr.AntoineArcher.domaine.MomentDeLaJournee;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

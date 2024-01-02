@@ -1,4 +1,4 @@
-package fr.AntoineArcher.Domain;
+package fr.AntoineArcher.domaine;
 
 public class LangueAnglais implements Langue {
     @Override
@@ -8,7 +8,6 @@ public class LangueAnglais implements Langue {
 
     @Override
     public String bonjour(int momentDeLaJournee) {
-
         return Constantes.BONJOUR_EN[momentDeLaJournee];
     }
 
@@ -19,6 +18,7 @@ public class LangueAnglais implements Langue {
 
     @Override
     public String demandeMot() {
+
         return Constantes.DEMANDE_MOT_EN;
     }
 }

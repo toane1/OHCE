@@ -1,8 +1,8 @@
 package fr.AntoineArcher.console;
 
-import fr.AntoineArcher.Domain.Langue;
-import fr.AntoineArcher.Domain.LangueAnglais;
-import fr.AntoineArcher.Domain.LangueFrancais;
+import fr.AntoineArcher.domaine.Langue;
+import fr.AntoineArcher.domaine.LangueAnglais;
+import fr.AntoineArcher.domaine.LangueFrancais;
 
 public class LangueSystem implements Langue {
 
