@@ -24,6 +24,8 @@ public class VerificationPalindrome {
 
         resultBuilder.append(langue.auRevoir(momentDeLaJournee));
 
+        resultBuilder.append(System.lineSeparator());
+
         return resultBuilder.toString();
     }
 }
