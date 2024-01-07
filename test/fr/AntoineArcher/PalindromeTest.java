@@ -46,6 +46,19 @@ public class PalindromeTest {
         // ALORS le résultat ne comporte pas de félicitations
         assertFalse(langueSpy.feliciterAEteInvoque());
     }
+
+    @ParameterizedTest
+    @DisplayName("Saut de ligne final")
+    @ValueSource(strings = {"test", "radar"})
+    public void sautDeLigneFinal(String chaine){
+        // ETANT DONNE une chaîne
+        // QUAND on vérifie si c'est un palindrome
+        String resultat = VerificationPalindromeBuilder.parDefault().verifier(chaine);
+
+        // ALORS le dernier caractère de la réponse est un saut de ligne
+        assertTrue(resultat.endsWith(System.lineSeparator()));
+    }
+
     static Stream<Arguments> casPalindromeMultilangue(){
         return Stream.of(
                 Arguments.of("radar", new LangueFrancais(), Constantes.BIENDIT),

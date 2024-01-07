@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8748dbcc-346e-405e-891e-f2b7505b411e" name="Changes" comment="debut implémentation heures">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/antoine.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/AntoineArcher/Domain/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/domaine/Constantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/AntoineArcher/Domain/Langue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/domaine/Langue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/AntoineArcher/Domain/LangueAnglais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/domaine/LangueAnglais.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/AntoineArcher/Domain/LangueFrancais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/domaine/LangueFrancais.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/AntoineArcher/Domain/MomentDeLaJournee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/domaine/MomentDeLaJournee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/AntoineArcher/Domain/verificationPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/domaine/VerificationPalindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/AntoineArcher/console/DetectionMomentDeLaJournee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/console/DetectionMomentDeLaJournee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/AntoineArcher/console/LangueSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/console/LangueSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/AntoineArcher/console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/AntoineArcher/console/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/fr/AntoineArcher/PalindromeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/fr/AntoineArcher/PalindromeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fr/AntoineArcher/TestBuilders/LangueSpy.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/fr/AntoineArcher/TestBuilders/LangueSpy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fr/AntoineArcher/TestBuilders/LangueStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/fr/AntoineArcher/TestBuilders/LangueStub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fr/AntoineArcher/TestBuilders/VerificationPalindromeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/fr/AntoineArcher/TestBuilders/VerificationPalindromeBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,27 +66,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.48965517&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.48965517",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -108,6 +98,19 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.PalindromeTest">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fr.AntoineArcher.console.Main" />
+      <module name="Echauffement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.AntoineArcher.console.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PalindromeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Echauffement" />
       <extension name="coverage">
@@ -123,7 +126,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PalindromeTest.testAuRevoirMultiLangue (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PalindromeTest.sautDeLigneFinal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Echauffement" />
       <extension name="coverage">
         <pattern>
@@ -133,7 +136,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="fr.AntoineArcher" />
       <option name="MAIN_CLASS_NAME" value="fr.AntoineArcher.PalindromeTest" />
-      <option name="METHOD_NAME" value="testAuRevoirMultiLangue(java.lang.String,fr.AntoineArcher.domaine.Langue,java.lang.String)" />
+      <option name="METHOD_NAME" value="sautDeLigneFinal(java.lang.String)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -171,22 +174,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PalindromeTest.testBonjourMultiLangue (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Echauffement" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="fr.AntoineArcher.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="fr.AntoineArcher" />
-      <option name="MAIN_CLASS_NAME" value="fr.AntoineArcher.PalindromeTest" />
-      <option name="METHOD_NAME" value="testBonjourMultiLangue(java.lang.String,fr.AntoineArcher.domaine.Langue,int,java.lang.String)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PalindromeTest.testBonjourMultiLangue (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Echauffement" />
       <extension name="coverage">
@@ -206,10 +193,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.PalindromeTest" />
+        <item itemvalue="JUnit.PalindromeTest.sautDeLigneFinal" />
         <item itemvalue="JUnit.PalindromeTest.testAuRevoirMultiLangue" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.PalindromeTest.testBonjourMultiLangue (2)" />
-        <item itemvalue="JUnit.PalindromeTest.testBonjourMultiLangue (1)" />
-        <item itemvalue="JUnit.PalindromeTest.testAuRevoirMultiLangue (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -227,6 +214,7 @@
       <workItem from="1701959466640" duration="4409000" />
       <workItem from="1702215471443" duration="872000" />
       <workItem from="1704229034093" duration="4722000" />
+      <workItem from="1704639943735" duration="3131000" />
     </task>
     <task id="LOCAL-00001" summary="echauffement">
       <option name="closed" value="true" />
@@ -375,5 +363,9 @@
     <MESSAGE value="test Multilingue aurevoir" />
     <MESSAGE value="debut implémentation heures" />
     <option name="LAST_COMMIT_MESSAGE" value="debut implémentation heures" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
